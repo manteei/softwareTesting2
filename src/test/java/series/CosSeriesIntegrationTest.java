@@ -33,7 +33,6 @@ class CosSeriesIntegrationTest {
         assertEquals(expected, mathFunctions.tan(x), 0.001);
     }
 
-
     @ParameterizedTest
     @MethodSource("secArgs")
     void secTest(double x, double expected) {

@@ -4,7 +4,6 @@ import mathfunctions.MathFunctions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
-import org.junit.jupiter.params.provider.ValueSource;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -21,6 +20,11 @@ class SystemIntegrationTest {
 
     static Stream<Arguments> arguments() {
         return Stream.of(
+                Arguments.of(1, 0),
+                Arguments.of(-4.009, -0.656),
+                Arguments.of(-5.416, 0.656),
+                Arguments.of(-2*Math.PI,0),
+
                 Arguments.of(-0.5, -0.606503),
                 Arguments.of(-11.48, 0.583338),
                 Arguments.of(-0.1, -0.100435),

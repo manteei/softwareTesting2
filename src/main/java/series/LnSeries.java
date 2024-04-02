@@ -20,7 +20,7 @@ public class LnSeries implements Function<Double,Double> {
         if (n % 2 == 0) {
             return 0;
         } else {
-            return 2 * Math.pow(x, n) / n;
+            return 2*Math.pow(x, n) / n;
         }
     }
 

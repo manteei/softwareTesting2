@@ -14,7 +14,7 @@ public class CsvUtil {
     private static final double lowValue = -4;
     private static final double highValue = 4;
 
-    static void printValueToCsv(File file, Double x, Double value, BufferedWriter bufferedWriter) throws IOException {
+    static void printValueToCsv(Double x, Double value, BufferedWriter bufferedWriter) throws IOException {
         bufferedWriter.write(String.valueOf(x));
         bufferedWriter.write(",");
         bufferedWriter.write(String.valueOf(value));
@@ -31,7 +31,7 @@ public class CsvUtil {
             bufferedWriter.newLine();
             for (int i = 0; i < (highVal - lowVal) / step; ++i) {
                 x = lowVal + i * step;
-                printValueToCsv(file, x, function.apply(x), bufferedWriter);
+                printValueToCsv(x, function.apply(x), bufferedWriter);
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -45,7 +45,7 @@ public class CsvUtil {
         printCsv(mathFunctions::sin, step, lowValue, highValue, "sin");
         printCsv(mathFunctions::tan, step, lowValue, highValue, "tan");
         printCsv(mathFunctions::sec, step, lowValue, highValue, "sec");
-        printCsv(mathFunctions::csc, step, lowValue, highValue, "cosec");
+        printCsv(mathFunctions::csc, step, lowValue, highValue, "csc");
         printCsv(system::trigonometricEq, step, lowValue, highValue, "trigonometric");
         printCsv(system::logarithmicEq, step, lowValue, highValue, "logarithmic");
     }
